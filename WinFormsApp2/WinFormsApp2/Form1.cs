@@ -6,5 +6,21 @@ namespace WinFormsApp2
         {
             InitializeComponent();
         }
+
+        private void mnuInfo_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutBox = new AboutBox1();
+            aboutBox.ShowDialog();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mnuRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
