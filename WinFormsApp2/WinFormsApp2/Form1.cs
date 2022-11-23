@@ -2,6 +2,7 @@
 
 
 using System.Diagnostics;
+using System.Web;
 
 namespace WinFormsApp2
 {
@@ -75,17 +76,10 @@ namespace WinFormsApp2
 
         private void btnWhatsapp_Click(object sender, EventArgs e)
         {
-
-            // 15551234567
             string phone = txtPhoneNumber.Text;
-            string url = "https://wa.me/" + phone;
-            //string url = $"whatsapp://send?phone={phone}&text=hello";
+            string url = "https://wa.me/" + phone + "?text=hello world!";
 
-            //ProcessStartInfo processStartInfo = new ProcessStartInfo(url);
-            //processStartInfo.UseShellExecute = false;
-
-
-            Process.Start("explorer.exe", url);
+            Process.Start("explorer.exe", "\"" + url + "\"");
         }
     }
 }
