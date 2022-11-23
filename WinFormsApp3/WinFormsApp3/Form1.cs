@@ -1,4 +1,6 @@
 using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using static System.Windows.Forms.LinkLabel;
 
 namespace WinFormsApp3
@@ -113,13 +115,42 @@ namespace WinFormsApp3
         {
             // subject|detail|23.12.2022 23:00|true|ADE567-ASS1234-2323...
 
-            List<string> lines = new List<string>(todos.Count);
+            #region "Dosyaya kendi formatýmýzda kaydetme.."
+            //List<string> lines = new List<string>(todos.Count);
 
-            foreach (Todo item in todos)
-            {
-                string line = $"{item.Subject}|{item.Detail}|{item.DueDate}|{item.IsCompleted}|{item.Id}";
-                lines.Add(line);
-            }
+            //foreach (Todo item in todos)
+            //{
+            //    string line = $"{item.Subject}|{item.Detail}|{item.DueDate}|{item.IsCompleted}|{item.Id}";
+            //    lines.Add(line);
+            //}
+            #endregion
+
+
+            #region "JSON format oluþturma - eziyet yöntemi"
+
+            //List<string> lines = new List<string>();
+
+            //foreach (Todo item in todos)
+            //{
+            //    string line = 
+            //    "{" + 
+            //        $"\"id\":\"{item.Id}\"," +
+            //        $"\"subject\":\"{item.Subject}\"," +
+            //        $"\"detail\":\"{item.Detail}\"," +
+            //        $"\"dueDate\":\"{item.DueDate}\"," +
+            //        $"\"isCompleted\":{item.IsCompleted.ToString().ToLower()}" +
+            //    "}";
+
+            //    lines.Add(line);
+            //}
+
+            //string json = "{" + "\"tasks\":" + "[" + string.Join(',', lines) + "]}";
+            #endregion
+
+
+            string json = JsonSerializer.Serialize(todos);
+
+
 
             //string path = Application.StartupPath + "\\data.txt";
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\data.txt";
@@ -135,7 +166,8 @@ namespace WinFormsApp3
 
             if (result == DialogResult.OK)
             {
-                File.WriteAllLines(saveFileDialog.FileName, lines);
+                //File.WriteAllLines(saveFileDialog.FileName, lines);
+                File.WriteAllText(saveFileDialog.FileName, json);
                 MessageBox.Show("Veriler kaydedildi.", "Kaydetme Yapýldý");
             }
         }
@@ -153,23 +185,26 @@ namespace WinFormsApp3
             if (result == DialogResult.OK)                  // Eðer dosya seçip Tamam düðmesine bastý ise;
             {
                 string path = openFileDialog.FileName;      // Dosya konumu alýnýr.
-                string[] lines = File.ReadAllLines(path);   // Dosyadan tüm satýrlar string olarak okunur.
+                //string[] lines = File.ReadAllLines(path); // Dosyadan tüm satýrlar string olarak okunur.
+                string json = File.ReadAllText(path);       // Dosyadan tüm satýrlar string olarak okunur.
 
-                todos.Clear();                              // Elimizdeki liste temizlenir.
+                todos = JsonSerializer.Deserialize<List<Todo>>(json);
 
-                foreach (string line in lines)              // Tüm okunan satýrlar için dönülür.
-                {
-                    string[] splitted = line.Split("|");    // Satýr verisi parçalanýr.
-                                                            // subject|detail|23.12.2022 23:00|true
-                    Todo todo = new();                      // Todo nesnesi oluþturulur.
-                    todo.Subject = splitted[0];
-                    todo.Detail = splitted[1];
-                    todo.DueDate = DateTime.Parse(splitted[2]);
-                    todo.IsCompleted = bool.Parse(splitted[3]);
-                    todo.Id = Guid.Parse(splitted[4]);
+                //todos.Clear();                              // Elimizdeki liste temizlenir.
 
-                    todos.Add(todo);                        // Listeye oluþturulan Todo nesnesi eklenir.
-                }
+                //foreach (string line in lines)              // Tüm okunan satýrlar için dönülür.
+                //{
+                //    string[] splitted = line.Split("|");    // Satýr verisi parçalanýr.
+                //                                            // subject|detail|23.12.2022 23:00|true
+                //    Todo todo = new();                      // Todo nesnesi oluþturulur.
+                //    todo.Subject = splitted[0];
+                //    todo.Detail = splitted[1];
+                //    todo.DueDate = DateTime.Parse(splitted[2]);
+                //    todo.IsCompleted = bool.Parse(splitted[3]);
+                //    todo.Id = Guid.Parse(splitted[4]);
+
+                //    todos.Add(todo);                        // Listeye oluþturulan Todo nesnesi eklenir.
+                //}
 
                 LoadListboxMethod2();                       // liste den Listbox doldurulur.
             }
