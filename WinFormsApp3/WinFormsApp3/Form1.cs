@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace WinFormsApp3
 {
     public partial class Form1 : Form
@@ -116,6 +118,24 @@ namespace WinFormsApp3
             {
                 string line = $"{item.Subject}|{item.Detail}|{item.DueDate}|{item.IsCompleted}";
                 lines.Add(line);
+            }
+
+            //string path = Application.StartupPath + "\\data.txt";
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\data.txt";
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Verileri Kaydet";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter = "Metin Belgeleri(*.txt)|*.txt|Todo App Format(*.todo)|*.todo";
+
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog.FileName, lines);
+                MessageBox.Show("Veriler kaydedildi.", "Kaydetme Yapýldý");
             }
         }
     }
