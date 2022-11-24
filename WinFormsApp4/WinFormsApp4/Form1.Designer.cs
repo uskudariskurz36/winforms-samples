@@ -57,10 +57,24 @@
             this.txtPostalCode = new System.Windows.Forms.MaskedTextBox();
             this.txtCountryRegionCode = new System.Windows.Forms.MaskedTextBox();
             this.btnAddAddress = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstAddresses = new System.Windows.Forms.ListBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lstExperiences = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtExpCompany = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtExpDetail = new System.Windows.Forms.TextBox();
+            this.txtExpCity = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtExpCountry = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnExpCreate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -195,7 +209,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.lstAddresses);
             this.groupBox2.Controls.Add(this.btnAddAddress);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.txtPostalCode);
@@ -335,20 +349,134 @@
             this.btnAddAddress.Text = "Add";
             this.btnAddAddress.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstAddresses
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(6, 33);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(236, 139);
-            this.listBox1.TabIndex = 5;
+            this.lstAddresses.FormattingEnabled = true;
+            this.lstAddresses.ItemHeight = 15;
+            this.lstAddresses.Location = new System.Drawing.Point(6, 33);
+            this.lstAddresses.Name = "lstAddresses";
+            this.lstAddresses.Size = new System.Drawing.Size(236, 139);
+            this.lstAddresses.TabIndex = 5;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lstExperiences);
+            this.groupBox4.Controls.Add(this.btnExpCreate);
+            this.groupBox4.Controls.Add(this.txtExpCompany);
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Location = new System.Drawing.Point(552, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(236, 510);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "User Experiences";
+            // 
+            // lstExperiences
+            // 
+            this.lstExperiences.FormattingEnabled = true;
+            this.lstExperiences.ItemHeight = 15;
+            this.lstExperiences.Location = new System.Drawing.Point(6, 33);
+            this.lstExperiences.Name = "lstExperiences";
+            this.lstExperiences.Size = new System.Drawing.Size(224, 139);
+            this.lstExperiences.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 175);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 15);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Company";
+            // 
+            // txtExpCompany
+            // 
+            this.txtExpCompany.Location = new System.Drawing.Point(6, 193);
+            this.txtExpCompany.Name = "txtExpCompany";
+            this.txtExpCompany.Size = new System.Drawing.Size(224, 23);
+            this.txtExpCompany.TabIndex = 1;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.txtExpCountry);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.txtExpCity);
+            this.groupBox5.Controls.Add(this.txtExpDetail);
+            this.groupBox5.Location = new System.Drawing.Point(6, 222);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(224, 202);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Experience Address";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 23);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 15);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Detail";
+            // 
+            // txtExpDetail
+            // 
+            this.txtExpDetail.Location = new System.Drawing.Point(6, 41);
+            this.txtExpDetail.Multiline = true;
+            this.txtExpDetail.Name = "txtExpDetail";
+            this.txtExpDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtExpDetail.Size = new System.Drawing.Size(212, 67);
+            this.txtExpDetail.TabIndex = 1;
+            // 
+            // txtExpCity
+            // 
+            this.txtExpCity.Location = new System.Drawing.Point(6, 129);
+            this.txtExpCity.Name = "txtExpCity";
+            this.txtExpCity.Size = new System.Drawing.Size(212, 23);
+            this.txtExpCity.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 111);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "City";
+            // 
+            // txtExpCountry
+            // 
+            this.txtExpCountry.Location = new System.Drawing.Point(6, 173);
+            this.txtExpCountry.Name = "txtExpCountry";
+            this.txtExpCountry.Size = new System.Drawing.Size(212, 23);
+            this.txtExpCountry.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 155);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 15);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Country";
+            // 
+            // btnExpCreate
+            // 
+            this.btnExpCreate.Location = new System.Drawing.Point(155, 430);
+            this.btnExpCreate.Name = "btnExpCreate";
+            this.btnExpCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnExpCreate.TabIndex = 4;
+            this.btnExpCreate.Text = "Add";
+            this.btnExpCreate.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -359,6 +487,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,9 +523,21 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private ListBox listBox1;
+        private ListBox lstAddresses;
         private Button btnAddAddress;
         private MaskedTextBox txtCountryRegionCode;
         private MaskedTextBox txtPostalCode;
+        private GroupBox groupBox4;
+        private ListBox lstExperiences;
+        private TextBox txtExpCompany;
+        private GroupBox groupBox5;
+        private Label label16;
+        private Label label14;
+        private TextBox txtExpCountry;
+        private Label label15;
+        private TextBox txtExpCity;
+        private TextBox txtExpDetail;
+        private Label label13;
+        private Button btnExpCreate;
     }
 }
