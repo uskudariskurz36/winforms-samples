@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace WinFormsApp4
 {
     public partial class Form1 : Form
@@ -20,13 +22,16 @@ namespace WinFormsApp4
                 TcNo = txtTcNo.Text,
                 Phone = txtPhone.Text,
                 Male = chkMale.Checked,
-                Addresses = new List<Address>(),
-                Experiences = new List<Experience>()
+                //Addresses = new List<Address>(),
+                //Experiences = new List<Experience>()
             };
 
             //User user1 = new User();
             //user1.Name = txtName.Text;
             //user1.Surname= txtSurname.Text;
+
+            btnAddAddress.Enabled = true;
+            btnExpCreate.Enabled = true;
         }
 
         private void btnAddAddress_Click(object sender, EventArgs e)
@@ -62,6 +67,33 @@ namespace WinFormsApp4
 
             lstAddresses.Items.Add(address);
             user.Addresses.Add(address);
+        }
+
+        private void btnExpCreate_Click(object sender, EventArgs e)
+        {
+            Experience experience = new Experience
+            {
+                Company = txtExpCompany.Text,
+                Address = new ExperienceAddress
+                {
+                    Detail= txtExpDetail.Text,
+                    City= txtExpCity.Text,
+                    Country= txtExpCountry.Text,
+                }
+            };
+
+            lstExperiences.Items.Add(experience);
+            user.Experiences.Add(experience);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "\\user.json";
+            string json = JsonSerializer.Serialize(user);
+
+            File.WriteAllText(path, json);
+
+            MessageBox.Show("Kaydedildi.");
         }
     }
 }
