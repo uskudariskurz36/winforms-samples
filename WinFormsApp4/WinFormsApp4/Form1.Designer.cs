@@ -74,6 +74,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.chkMale = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkMale);
             this.groupBox1.Controls.Add(this.btnCreateUser);
             this.groupBox1.Controls.Add(this.txtTcNo);
             this.groupBox1.Controls.Add(this.txtPhone);
@@ -205,12 +207,13 @@
             // 
             // btnCreateUser
             // 
-            this.btnCreateUser.Location = new System.Drawing.Point(188, 300);
+            this.btnCreateUser.Location = new System.Drawing.Point(188, 303);
             this.btnCreateUser.Name = "btnCreateUser";
             this.btnCreateUser.Size = new System.Drawing.Size(75, 23);
             this.btnCreateUser.TabIndex = 4;
             this.btnCreateUser.Text = "Create";
             this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
             // groupBox2
             // 
@@ -353,6 +356,7 @@
             this.btnAddAddress.TabIndex = 4;
             this.btnAddAddress.Text = "Add";
             this.btnAddAddress.UseVisualStyleBackColor = true;
+            this.btnAddAddress.Click += new System.EventHandler(this.btnAddAddress_Click);
             // 
             // lstAddresses
             // 
@@ -505,6 +509,16 @@
             this.btnSave.Size = new System.Drawing.Size(23, 22);
             this.btnSave.Text = "&Save";
             // 
+            // chkMale
+            // 
+            this.chkMale.AutoSize = true;
+            this.chkMale.Location = new System.Drawing.Point(16, 303);
+            this.chkMale.Name = "chkMale";
+            this.chkMale.Size = new System.Drawing.Size(52, 19);
+            this.chkMale.TabIndex = 5;
+            this.chkMale.Text = "Male";
+            this.chkMale.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -580,5 +594,6 @@
         private ToolStrip toolStrip1;
         private ToolStripButton btnOpen;
         private ToolStripButton btnSave;
+        private CheckBox chkMale;
     }
 }
