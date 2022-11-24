@@ -1,3 +1,4 @@
+using QRCoder;
 using System.Text.Json;
 
 namespace WinFormsApp4
@@ -76,9 +77,9 @@ namespace WinFormsApp4
                 Company = txtExpCompany.Text,
                 Address = new ExperienceAddress
                 {
-                    Detail= txtExpDetail.Text,
-                    City= txtExpCity.Text,
-                    Country= txtExpCountry.Text,
+                    Detail = txtExpDetail.Text,
+                    City = txtExpCity.Text,
+                    Country = txtExpCountry.Text,
                 }
             };
 
@@ -94,6 +95,44 @@ namespace WinFormsApp4
             File.WriteAllText(path, json);
 
             MessageBox.Show("Kaydedildi.");
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "\\user.json";
+            string json = File.ReadAllText(path);
+
+            user = JsonSerializer.Deserialize<User>(json);
+
+            txtName.Text = user.Name;
+            txtSurname.Text = user.Surname;
+            txtPhone.Text = user.Phone;
+            txtEmail.Text = user.Email;
+            txtTcNo.Text = user.TcNo;
+            dtpBirthdate.Value = user.BirthDate;
+            chkMale.Checked = user.Male;
+
+            lstAddresses.Items.AddRange(user.Addresses.ToArray());
+            lstExperiences.Items.AddRange(user.Experiences.ToArray());
+
+        }
+
+        private void btnCreateQRCode_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "\\user.json";
+            string json = File.ReadAllText(path);
+
+            QRCodeGenerator generator = new QRCodeGenerator();
+            QRCodeData data = generator.CreateQrCode(json, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            Bitmap bitmap = code.GetGraphic(20);
+
+            picQRCode.Image = bitmap;
+
+            Form2 frm = new Form2();
+            frm.pictureBox1.Image = bitmap;
+
+            frm.ShowDialog();
         }
     }
 }

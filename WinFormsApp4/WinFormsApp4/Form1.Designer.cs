@@ -75,16 +75,21 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCreateQRCode = new System.Windows.Forms.ToolStripButton();
+            this.picQRCode = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.picQRCode);
             this.groupBox1.Controls.Add(this.chkMale);
             this.groupBox1.Controls.Add(this.btnCreateUser);
             this.groupBox1.Controls.Add(this.txtTcNo);
@@ -498,7 +503,9 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOpen,
-            this.btnSave});
+            this.btnSave,
+            this.toolStripSeparator1,
+            this.btnCreateQRCode});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -513,6 +520,7 @@
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(23, 22);
             this.btnOpen.Text = "&Open";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
@@ -523,6 +531,32 @@
             this.btnSave.Size = new System.Drawing.Size(23, 22);
             this.btnSave.Text = "&Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnCreateQRCode
+            // 
+            this.btnCreateQRCode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCreateQRCode.Image = global::WinFormsApp4.Properties.Resources.qr_code_scan_icon;
+            this.btnCreateQRCode.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCreateQRCode.Name = "btnCreateQRCode";
+            this.btnCreateQRCode.Size = new System.Drawing.Size(23, 22);
+            this.btnCreateQRCode.Text = "toolStripButton1";
+            this.btnCreateQRCode.Click += new System.EventHandler(this.btnCreateQRCode_Click);
+            // 
+            // picQRCode
+            // 
+            this.picQRCode.BackColor = System.Drawing.Color.White;
+            this.picQRCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQRCode.Location = new System.Drawing.Point(16, 332);
+            this.picQRCode.Name = "picQRCode";
+            this.picQRCode.Size = new System.Drawing.Size(247, 172);
+            this.picQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQRCode.TabIndex = 6;
+            this.picQRCode.TabStop = false;
             // 
             // Form1
             // 
@@ -547,6 +581,7 @@
             this.groupBox5.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,5 +635,8 @@
         private ToolStripButton btnOpen;
         private ToolStripButton btnSave;
         private CheckBox chkMale;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btnCreateQRCode;
+        private PictureBox picQRCode;
     }
 }
