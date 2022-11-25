@@ -191,6 +191,7 @@
             this.btnDeleteVehicle.TabIndex = 2;
             this.btnDeleteVehicle.Text = "Sil";
             this.btnDeleteVehicle.UseVisualStyleBackColor = true;
+            this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
             // 
             // groupBox2
             // 
@@ -404,6 +405,7 @@
             this.btnRent.TabIndex = 2;
             this.btnRent.Text = "Kirala";
             this.btnRent.UseVisualStyleBackColor = true;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // txtCustomerTCNo
             // 
@@ -506,6 +508,7 @@
             this.btnDeleteRent.TabIndex = 2;
             this.btnDeleteRent.Text = "Sil";
             this.btnDeleteRent.UseVisualStyleBackColor = true;
+            this.btnDeleteRent.Click += new System.EventHandler(this.btnDeleteRent_Click);
             // 
             // Form1
             // 

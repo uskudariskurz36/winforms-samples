@@ -10,7 +10,10 @@ namespace WinFormsApp6_AracKiralama
         }
 
         private List<Vehicle> vehicles = new List<Vehicle>();
+        private List<Rent> rents = new List<Rent>();
+
         private string pathVehicles = Application.StartupPath + "vehicles.json";
+        private string pathRents = Application.StartupPath + "rents.json";
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
@@ -24,10 +27,18 @@ namespace WinFormsApp6_AracKiralama
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string json = 
+            // save vehicles..
+            string jsonVehicles = 
                 JsonSerializer.Serialize(vehicles, new JsonSerializerOptions() { WriteIndented= true });
 
-            File.WriteAllText(pathVehicles, json);
+            File.WriteAllText(pathVehicles, jsonVehicles);
+
+
+            // save rents..
+            string jsonRents =
+                JsonSerializer.Serialize(rents, new JsonSerializerOptions() { WriteIndented = true });
+
+            File.WriteAllText(pathRents, jsonRents);
         }
 
         private void btnBrands_Click(object sender, EventArgs e)
@@ -57,6 +68,16 @@ namespace WinFormsApp6_AracKiralama
 
                 lstVehicles.DataSource = null;
                 lstVehicles.DataSource = vehicles;
+            }
+
+
+            if (File.Exists(pathRents))
+            {
+                string json = File.ReadAllText(pathRents);
+                rents = JsonSerializer.Deserialize<List<Rent>>(json);
+
+                lstCustomerRents.DataSource = null;
+                lstCustomerRents.DataSource = rents;
             }
         }
 
@@ -90,6 +111,60 @@ namespace WinFormsApp6_AracKiralama
 
             lstVehicles.DataSource = null;
             lstVehicles.DataSource = vehicles;
+        }
+
+        private void btnDeleteVehicle_Click(object sender, EventArgs e)
+        {
+            if (lstVehicles.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir kayýt seçiniz..");
+                return;
+            }
+
+            vehicles.RemoveAt(lstVehicles.SelectedIndex);
+
+            lstVehicles.DataSource = null;
+            lstVehicles.DataSource = vehicles;
+        }
+
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            if (lstVehicles.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir araç seçiniz..");
+                return;
+            }
+
+
+            Rent rent = new Rent();
+            rent.NameSurname = txtCustomerName.Text;
+            rent.TCNo = txtCustomerTCNo.Text;
+            rent.StartDate = dtpStartDate.Value.Date;
+            rent.EndDate = dtpEndDate.Value.Date;
+            rent.DownPayment = nudDownPayment.Value;
+
+            Vehicle selectedVehicle = lstVehicles.SelectedItem as Vehicle;
+
+            rent.Vehicle = selectedVehicle;
+
+            rents.Add(rent);
+
+            lstCustomerRents.DataSource = null;
+            lstCustomerRents.DataSource = rents;
+        }
+
+        private void btnDeleteRent_Click(object sender, EventArgs e)
+        {
+            if (lstCustomerRents.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir kayýt seçiniz..");
+                return;
+            }
+
+            rents.RemoveAt(lstCustomerRents.SelectedIndex);
+
+            lstCustomerRents.DataSource = null;
+            lstCustomerRents.DataSource = rents;
         }
     }
 }
