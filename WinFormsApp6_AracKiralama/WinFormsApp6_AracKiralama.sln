@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp6_AracKiralama", "WinFormsApp6_AracKiralama\WinFormsApp6_AracKiralama.csproj", "{1194922B-3F60-41D9-B8A1-BE884A2D9AC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1194922B-3F60-41D9-B8A1-BE884A2D9AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1194922B-3F60-41D9-B8A1-BE884A2D9AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1194922B-3F60-41D9-B8A1-BE884A2D9AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1194922B-3F60-41D9-B8A1-BE884A2D9AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11AFE18F-15F8-463B-B180-29EEF22C1F3C}
+	EndGlobalSection
+EndGlobal
