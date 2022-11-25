@@ -43,6 +43,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -52,6 +53,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -61,12 +63,13 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(15, 278);
             this.txtName.Name = "txtName";
-            this.txtName.PlaceholderText = "Marka adı";
+            this.txtName.PlaceholderText = "Model adı";
             this.txtName.Size = new System.Drawing.Size(207, 23);
             this.txtName.TabIndex = 4;
             // 
@@ -94,6 +97,7 @@
             this.Name = "frmModels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modeller";
+            this.Load += new System.EventHandler(this.frmModels_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

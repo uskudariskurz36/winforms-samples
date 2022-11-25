@@ -60,6 +60,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -69,6 +70,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -78,6 +80,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmBrands
             // 
@@ -94,6 +97,7 @@
             this.Name = "frmBrands";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Markalar";
+            this.Load += new System.EventHandler(this.frmBrands_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

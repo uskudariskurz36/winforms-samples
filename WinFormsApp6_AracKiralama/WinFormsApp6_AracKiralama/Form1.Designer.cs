@@ -109,8 +109,9 @@
             // btnExit
             // 
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(150, 22);
+            this.btnExit.Size = new System.Drawing.Size(180, 22);
             this.btnExit.Text = "Çıkış";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // markaYönetToolStripMenuItem
             // 
@@ -131,14 +132,16 @@
             // btnSave
             // 
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 22);
+            this.btnSave.Size = new System.Drawing.Size(180, 22);
             this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRestart
             // 
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(150, 22);
+            this.btnRestart.Size = new System.Drawing.Size(180, 22);
             this.btnRestart.Text = "Yeniden Başlat";
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -150,12 +153,14 @@
             this.btnBrands.Name = "btnBrands";
             this.btnBrands.Size = new System.Drawing.Size(180, 22);
             this.btnBrands.Text = "Markalar";
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
             // 
             // btnModels
             // 
             this.btnModels.Name = "btnModels";
             this.btnModels.Size = new System.Drawing.Size(180, 22);
             this.btnModels.Text = "Modeller";
+            this.btnModels.Click += new System.EventHandler(this.btnModels_Click);
             // 
             // groupBox1
             // 
