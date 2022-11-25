@@ -9,8 +9,8 @@ namespace WinFormsApp6_AracKiralama
             InitializeComponent();
         }
 
-        List<string> brands = new List<string>();
-        string path = Application.StartupPath + "brands.json";
+        private List<string> brands = new List<string>();
+        public static string path = Application.StartupPath + "brands.json";
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -72,12 +72,25 @@ namespace WinFormsApp6_AracKiralama
 
         private void frmBrands_Load(object sender, EventArgs e)
         {
+            List<string> list = ReadData();
+
+            brands = list;
+            BindDataToListbox();
+        }
+
+        public static List<string> ReadData()
+        {
             if (File.Exists(path))
             {
                 string json = File.ReadAllText(path);
-                brands = JsonSerializer.Deserialize<List<string>>(json, CreateJsonSerializerOptions());
+                List<string> list =
+                    JsonSerializer.Deserialize<List<string>>(json, CreateJsonSerializerOptions());
 
-                BindDataToListbox();
+                return list;
+            }
+            else
+            {
+                return new List<string>();
             }
         }
     }

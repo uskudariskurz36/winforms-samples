@@ -9,18 +9,15 @@ namespace WinFormsApp6_AracKiralama
             InitializeComponent();
         }
 
-        List<string> models = new List<string>();
-        string path = Application.StartupPath + "models.json";
+        private List<string> models = new List<string>();
+        public static string path = Application.StartupPath + "models.json";
 
         private void frmModels_Load(object sender, EventArgs e)
         {
-            if (File.Exists(path))
-            {
-                string json = File.ReadAllText(path);
-                models = JsonSerializer.Deserialize<List<string>>(json, CreateJsonSerializerOptions());
+            List<string> list = ReadData();
+            models = list;
 
-                BindDataToListbox();
-            }
+            BindDataToListbox();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -79,6 +76,22 @@ namespace WinFormsApp6_AracKiralama
             options.PropertyNameCaseInsensitive = true;
             options.WriteIndented = true;
             return options;
+        }
+
+        public static List<string> ReadData()
+        {
+            if (File.Exists(path))
+            {
+                string json = File.ReadAllText(path);
+                List<string> list =
+                    JsonSerializer.Deserialize<List<string>>(json, CreateJsonSerializerOptions());
+
+                return list;
+            }
+            else
+            {
+                return new List<string>();
+            }
         }
     }
 }

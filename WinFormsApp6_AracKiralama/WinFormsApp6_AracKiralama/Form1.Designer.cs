@@ -30,54 +30,54 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.markaYönetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modelYönetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRestart = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.markaYönetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBrands = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelYönetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnModels = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstVehicles = new System.Windows.Forms.ListBox();
             this.btnDeleteVehicle = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbBrand = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbModel = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nudKM = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudYear = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.nudDailyPrice = new System.Windows.Forms.NumericUpDown();
-            this.chkIsRent = new System.Windows.Forms.CheckBox();
-            this.btnAddVehicle = new System.Windows.Forms.Button();
             this.picVehicle = new System.Windows.Forms.PictureBox();
             this.btnSelectImage = new System.Windows.Forms.Button();
+            this.chkIsRent = new System.Windows.Forms.CheckBox();
+            this.nudDailyPrice = new System.Windows.Forms.NumericUpDown();
+            this.nudYear = new System.Windows.Forms.NumericUpDown();
+            this.nudKM = new System.Windows.Forms.NumericUpDown();
+            this.cmbModel = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbBrand = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddVehicle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCustomerTCNo = new System.Windows.Forms.TextBox();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.btnRent = new System.Windows.Forms.Button();
+            this.txtCustomerTCNo = new System.Windows.Forms.TextBox();
+            this.nudDownPayment = new System.Windows.Forms.NumericUpDown();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.nudDownPayment = new System.Windows.Forms.NumericUpDown();
-            this.btnRent = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lstCustomerRents = new System.Windows.Forms.ListBox();
             this.btnDeleteRent = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDailyPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVehicle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDailyPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDownPayment)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -106,10 +106,29 @@
             this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.dosyaToolStripMenuItem.Text = "Dosya";
             // 
+            // btnSave
+            // 
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(150, 22);
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(150, 22);
+            this.btnRestart.Text = "Yeniden Başlat";
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
+            // 
             // btnExit
             // 
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(180, 22);
+            this.btnExit.Size = new System.Drawing.Size(150, 22);
             this.btnExit.Text = "Çıkış";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -121,6 +140,13 @@
             this.markaYönetToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.markaYönetToolStripMenuItem.Text = "Marka Yönet";
             // 
+            // btnBrands
+            // 
+            this.btnBrands.Name = "btnBrands";
+            this.btnBrands.Size = new System.Drawing.Size(120, 22);
+            this.btnBrands.Text = "Markalar";
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
+            // 
             // modelYönetToolStripMenuItem
             // 
             this.modelYönetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -129,36 +155,10 @@
             this.modelYönetToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.modelYönetToolStripMenuItem.Text = "Model Yönet";
             // 
-            // btnSave
-            // 
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(180, 22);
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnRestart
-            // 
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(180, 22);
-            this.btnRestart.Text = "Yeniden Başlat";
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
-            // 
-            // btnBrands
-            // 
-            this.btnBrands.Name = "btnBrands";
-            this.btnBrands.Size = new System.Drawing.Size(180, 22);
-            this.btnBrands.Text = "Markalar";
-            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
-            // 
             // btnModels
             // 
             this.btnModels.Name = "btnModels";
-            this.btnModels.Size = new System.Drawing.Size(180, 22);
+            this.btnModels.Size = new System.Drawing.Size(121, 22);
             this.btnModels.Text = "Modeller";
             this.btnModels.Click += new System.EventHandler(this.btnModels_Click);
             // 
@@ -214,69 +214,48 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Araç Bilgileri";
             // 
-            // label1
+            // picVehicle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Markalar";
+            this.picVehicle.Location = new System.Drawing.Point(6, 272);
+            this.picVehicle.Name = "picVehicle";
+            this.picVehicle.Size = new System.Drawing.Size(188, 74);
+            this.picVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picVehicle.TabIndex = 4;
+            this.picVehicle.TabStop = false;
             // 
-            // cmbBrand
+            // btnSelectImage
             // 
-            this.cmbBrand.FormattingEnabled = true;
-            this.cmbBrand.Location = new System.Drawing.Point(6, 42);
-            this.cmbBrand.Name = "cmbBrand";
-            this.cmbBrand.Size = new System.Drawing.Size(188, 23);
-            this.cmbBrand.TabIndex = 1;
+            this.btnSelectImage.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSelectImage.Location = new System.Drawing.Point(119, 348);
+            this.btnSelectImage.Name = "btnSelectImage";
+            this.btnSelectImage.Size = new System.Drawing.Size(75, 19);
+            this.btnSelectImage.TabIndex = 2;
+            this.btnSelectImage.Text = "Resim Seç";
+            this.btnSelectImage.UseVisualStyleBackColor = true;
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
             // 
-            // label2
+            // chkIsRent
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Modeller";
+            this.chkIsRent.AutoSize = true;
+            this.chkIsRent.Location = new System.Drawing.Point(6, 247);
+            this.chkIsRent.Name = "chkIsRent";
+            this.chkIsRent.Size = new System.Drawing.Size(88, 19);
+            this.chkIsRent.TabIndex = 3;
+            this.chkIsRent.Text = "Kiralanabilir";
+            this.chkIsRent.UseVisualStyleBackColor = true;
             // 
-            // cmbModel
+            // nudDailyPrice
             // 
-            this.cmbModel.FormattingEnabled = true;
-            this.cmbModel.Location = new System.Drawing.Point(6, 86);
-            this.cmbModel.Name = "cmbModel";
-            this.cmbModel.Size = new System.Drawing.Size(188, 23);
-            this.cmbModel.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "KM";
-            // 
-            // nudKM
-            // 
-            this.nudKM.Location = new System.Drawing.Point(6, 130);
-            this.nudKM.Maximum = new decimal(new int[] {
-            999999,
+            this.nudDailyPrice.DecimalPlaces = 2;
+            this.nudDailyPrice.Location = new System.Drawing.Point(6, 218);
+            this.nudDailyPrice.Maximum = new decimal(new int[] {
+            99999,
             0,
             0,
             0});
-            this.nudKM.Name = "nudKM";
-            this.nudKM.Size = new System.Drawing.Size(188, 23);
-            this.nudKM.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Yılı";
+            this.nudDailyPrice.Name = "nudDailyPrice";
+            this.nudDailyPrice.Size = new System.Drawing.Size(188, 23);
+            this.nudDailyPrice.TabIndex = 2;
             // 
             // nudYear
             // 
@@ -300,6 +279,26 @@
             0,
             0});
             // 
+            // nudKM
+            // 
+            this.nudKM.Location = new System.Drawing.Point(6, 130);
+            this.nudKM.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nudKM.Name = "nudKM";
+            this.nudKM.Size = new System.Drawing.Size(188, 23);
+            this.nudKM.TabIndex = 2;
+            // 
+            // cmbModel
+            // 
+            this.cmbModel.FormattingEnabled = true;
+            this.cmbModel.Location = new System.Drawing.Point(6, 86);
+            this.cmbModel.Name = "cmbModel";
+            this.cmbModel.Size = new System.Drawing.Size(188, 23);
+            this.cmbModel.TabIndex = 1;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -309,28 +308,49 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Günlük Fiyatı";
             // 
-            // nudDailyPrice
+            // label4
             // 
-            this.nudDailyPrice.DecimalPlaces = 2;
-            this.nudDailyPrice.Location = new System.Drawing.Point(6, 218);
-            this.nudDailyPrice.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudDailyPrice.Name = "nudDailyPrice";
-            this.nudDailyPrice.Size = new System.Drawing.Size(188, 23);
-            this.nudDailyPrice.TabIndex = 2;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Yılı";
             // 
-            // chkIsRent
+            // label3
             // 
-            this.chkIsRent.AutoSize = true;
-            this.chkIsRent.Location = new System.Drawing.Point(6, 247);
-            this.chkIsRent.Name = "chkIsRent";
-            this.chkIsRent.Size = new System.Drawing.Size(88, 19);
-            this.chkIsRent.TabIndex = 3;
-            this.chkIsRent.Text = "Kiralanabilir";
-            this.chkIsRent.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "KM";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Modeller";
+            // 
+            // cmbBrand
+            // 
+            this.cmbBrand.FormattingEnabled = true;
+            this.cmbBrand.Location = new System.Drawing.Point(6, 42);
+            this.cmbBrand.Name = "cmbBrand";
+            this.cmbBrand.Size = new System.Drawing.Size(188, 23);
+            this.cmbBrand.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Markalar";
             // 
             // btnAddVehicle
             // 
@@ -340,25 +360,7 @@
             this.btnAddVehicle.TabIndex = 2;
             this.btnAddVehicle.Text = "Ekle";
             this.btnAddVehicle.UseVisualStyleBackColor = true;
-            // 
-            // picVehicle
-            // 
-            this.picVehicle.Location = new System.Drawing.Point(6, 272);
-            this.picVehicle.Name = "picVehicle";
-            this.picVehicle.Size = new System.Drawing.Size(188, 74);
-            this.picVehicle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picVehicle.TabIndex = 4;
-            this.picVehicle.TabStop = false;
-            // 
-            // btnSelectImage
-            // 
-            this.btnSelectImage.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectImage.Location = new System.Drawing.Point(119, 348);
-            this.btnSelectImage.Name = "btnSelectImage";
-            this.btnSelectImage.Size = new System.Drawing.Size(75, 19);
-            this.btnSelectImage.TabIndex = 2;
-            this.btnSelectImage.Text = "Resim Seç";
-            this.btnSelectImage.UseVisualStyleBackColor = true;
+            this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
             // 
             // groupBox3
             // 
@@ -380,30 +382,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kiralayan Bilgileri";
             // 
-            // label6
+            // dtpEndDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Müşteri Ad Soyad";
+            this.dtpEndDate.Location = new System.Drawing.Point(6, 174);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(188, 23);
+            this.dtpEndDate.TabIndex = 2;
             // 
-            // txtCustomerName
+            // dtpStartDate
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(6, 42);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(188, 23);
-            this.txtCustomerName.TabIndex = 1;
+            this.dtpStartDate.Location = new System.Drawing.Point(6, 130);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(188, 23);
+            this.dtpStartDate.TabIndex = 2;
             // 
-            // label7
+            // btnRent
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 112);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Başlangıç Tarihi";
+            this.btnRent.Location = new System.Drawing.Point(119, 247);
+            this.btnRent.Name = "btnRent";
+            this.btnRent.Size = new System.Drawing.Size(75, 23);
+            this.btnRent.TabIndex = 2;
+            this.btnRent.Text = "Kirala";
+            this.btnRent.UseVisualStyleBackColor = true;
             // 
             // txtCustomerTCNo
             // 
@@ -412,12 +412,25 @@
             this.txtCustomerTCNo.Size = new System.Drawing.Size(188, 23);
             this.txtCustomerTCNo.TabIndex = 1;
             // 
-            // dtpStartDate
+            // nudDownPayment
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(6, 130);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(188, 23);
-            this.dtpStartDate.TabIndex = 2;
+            this.nudDownPayment.DecimalPlaces = 2;
+            this.nudDownPayment.Location = new System.Drawing.Point(6, 218);
+            this.nudDownPayment.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nudDownPayment.Name = "nudDownPayment";
+            this.nudDownPayment.Size = new System.Drawing.Size(188, 23);
+            this.nudDownPayment.TabIndex = 2;
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(6, 42);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(188, 23);
+            this.txtCustomerName.TabIndex = 1;
             // 
             // label8
             // 
@@ -437,12 +450,14 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Bitiş Tarihi";
             // 
-            // dtpEndDate
+            // label7
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(6, 174);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(188, 23);
-            this.dtpEndDate.TabIndex = 2;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Başlangıç Tarihi";
             // 
             // label10
             // 
@@ -453,27 +468,14 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Kaparo";
             // 
-            // nudDownPayment
+            // label6
             // 
-            this.nudDownPayment.DecimalPlaces = 2;
-            this.nudDownPayment.Location = new System.Drawing.Point(6, 218);
-            this.nudDownPayment.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.nudDownPayment.Name = "nudDownPayment";
-            this.nudDownPayment.Size = new System.Drawing.Size(188, 23);
-            this.nudDownPayment.TabIndex = 2;
-            // 
-            // btnRent
-            // 
-            this.btnRent.Location = new System.Drawing.Point(119, 247);
-            this.btnRent.Name = "btnRent";
-            this.btnRent.Size = new System.Drawing.Size(75, 23);
-            this.btnRent.TabIndex = 2;
-            this.btnRent.Text = "Kirala";
-            this.btnRent.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Müşteri Ad Soyad";
             // 
             // groupBox4
             // 
@@ -524,15 +526,16 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Araç Kiralama";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDailyPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVehicle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDailyPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKM)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDownPayment)).EndInit();
